@@ -48,6 +48,7 @@ var eosVoter = class {
             chainId: null,
         }
         this.eosPublic = null;
+        this.promoted = 'eosliquideos';
         if (document.getElementById("cleos_name"))
             document.getElementById("cleos_name").onkeyup = this.updateAccountName;
         if (document.getElementById("eos_private_key"))
@@ -157,7 +158,6 @@ var eosVoter = class {
 
     storeSelectedBPs(bps) {
         localStorage.setItem('selectedBPs', bps);
-        // cookie["selected"] = this.getSelectedBPs()
     }
 
     voteSuccess(res) {
@@ -216,9 +216,9 @@ var eosVoter = class {
 
     buildTable(res) {
         var table = document.getElementsByTagName('tbody')[0];
-        const promoted = 'eosliquideos';
+        
         this.countTotalVotes(res);
-        var sorted = res.rows.sort((a, b) => a.owner === promoted ? -1 : b.owner === promoted ? 1 : Number(a.total_votes) > Number(b.total_votes) ? -1 : 1);
+        var sorted = res.rows.sort((a, b) => a.owner === this.promoted ? -1 : b.owner === this.promoted ? 1 : Number(a.total_votes) > Number(b.total_votes) ? -1 : 1);
 
         for (var i = 0; i < sorted.length; i++) {
             var row = sorted[i];
@@ -226,7 +226,7 @@ var eosVoter = class {
             if (!table) return;
 
             table.append(tr);
-            tr.append(this.addTd('<input name="bpVote" type="checkbox" value="' + row.owner + '" ' + (row.owner === promoted ? 'checked' : '') + ' >'));
+            tr.append(this.addTd('<input name="bpVote" type="checkbox" value="' + row.owner + '" ' + (this.bpShouldBeSelected(row.owner) ? 'checked' : '') + ' >'));
             tr.append(this.addTd("<a href='" + row.url + "'>" + row.owner + "</a>"));
             tr.append(this.addTd(row.location));
             tr.append(this.addTd(this.cleanNumber(row.total_votes)));
@@ -236,9 +236,13 @@ var eosVoter = class {
         document.getElementsByName("bpVote").forEach(e => {
             e.onclick = voter.bpClick;
         });
+        this.bpClick();
         return table;
     }
 
+    bpShouldBeSelected(owner) {
+        return owner === this.promoted || window.localStorage.getItem('selectedBPs').indexOf(owner) >= 0;
+    }
     countTotalVotes(res) {
         this.votes = 0;
         for (var i = res.rows.length - 1; i >= 0; i--) {
