@@ -280,7 +280,7 @@ var eosVoter = class {
     }
 
     voteNumber(total_votes) {
-        return parseInt(parseInt(total_votes) / 1e10 * 1.4);
+        return parseInt(parseInt(total_votes) / 1e10 * 2.8);
     }
     cleanNumber(num) {
         num = this.voteNumber(num);
