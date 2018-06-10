@@ -2,8 +2,8 @@
 
 ## To Download
 
-**[liquideos-vote-windows-1.0.0.zip](https://storage.googleapis.com/liquideos/voting-app/builds/liquideos-vote-windows-1.0.0.zip)**
-**[liquideos-vote-macos-1.0.0.zip](https://storage.googleapis.com/liquideos/voting-app/builds/liquideos-vote-macos-1.0.0.zip)**
+* **[liquideos-vote-windows-1.0.0.zip](https://storage.googleapis.com/liquideos/voting-app/builds/liquideos-vote-windows-1.0.0.zip)**
+* **[liquideos-vote-macos-1.0.0.zip](https://storage.googleapis.com/liquideos/voting-app/builds/liquideos-vote-macos-1.0.0.zip)**
 
 ## To Use
 
