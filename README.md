@@ -15,8 +15,6 @@ cd electron-quick-start
 npm install
 # Run the app
 npm start
-# Create distribution
-npm run dist
 ```
 
 
@@ -29,8 +27,6 @@ git clone https://github.com/electron/electron-quick-start
 cd electron-quick-start
 # Install dependencies
 npm install
-# Run the app
-npm start
 # Create distribution
 npm run dist
 ```
