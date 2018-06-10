@@ -8,9 +8,10 @@
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git@github.com:
+git clone https://github.com/bancorprotocol/liquideos-voting-app.git
 # Go into the repository
-cd electron-quick-start
+cd liquideos-voting-app
 # Install dependencies
 npm install
 # Run the app
@@ -22,13 +23,13 @@ npm start
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone https://github.com/bancorprotocol/liquideos-voting-app.git
 # Go into the repository
-cd electron-quick-start
+cd liquideos-voting-app
 # Install dependencies
 npm install
-# Run the app
-npm start
+# Create distribution
+npm run dist
 ```
 
 ## License

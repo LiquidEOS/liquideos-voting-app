@@ -5,19 +5,17 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-      "pack": "electron-builder --dir",
-      "dist": "electron-builder"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "keywords": [
-  ],
-  "build": {    
-    "appId": "com.liquideos.vote",    
-
-    "win":{
+  "keywords": [],
+  "build": {
+    "appId": "com.liquideos.vote",
+    "win": {
       "target": "portable"
     },
     "files": [
-     "**/*",
+      "**/*",
       "!node_modules/**"
     ]
   },
@@ -29,5 +27,6 @@
     "electron": "^2.0.0"
   },
   "dependencies": {
+    "npm": "^6.1.0"
   }
 }
