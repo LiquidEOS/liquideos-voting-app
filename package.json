@@ -11,6 +11,9 @@
   "keywords": [],
   "build": {
     "appId": "com.liquideos.vote",
+    "mac": {
+      "target": "pkg"
+    },
     "win": {
       "target": "portable"
     },
