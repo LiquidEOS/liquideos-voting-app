@@ -55,15 +55,14 @@ header {
 	background: white;
 	padding-bottom: 3px;
 }
-.btn-primary {
+/* .btn-primary {
 	background:#6bb9d5;
 	border-color: #6bb9d5;
 	color:white;
-}
-.btn-primary:hover {
+} */
+/* .btn-primary:hover {
 	background-color:#5da1ba;
-}
-
+} */
 
 .box > .icon { text-align: center; position: relative; }
 .box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #1f294c; vertical-align: middle; }
