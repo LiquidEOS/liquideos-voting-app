@@ -19,13 +19,18 @@
 	<a href="https://github.com/bancorprotocol/liquideos-voting-app" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
 	<div class="container bg-white">
 		<div class="row">
+			<div class="col-xs-12  pb-1 pt-4 pl-4 pr-4">
 			<!-- Boxes de Acoes -->
-			<p>We have decided to create a standalone EOS voting application that signs your transactions locally with your private key and then executes the transaction on the blockchain. The reason for this is multi-fold:</p>
-			<ul>
-				<li> The only EOS voting tool that is endorsed is a command line application which is difficult to install and use and will greatly limit access to voting.</li>
-				<li>Scatter, the most popular Web3 EOS wallet, has never been tested in production and isn’t fully verified by the community.</li>
-				<li>The web voting tool we built only works on HTTP, and even though your private key never leaves your browser, we wanted an extra level of security.</li>
-			</ul>
+				<p>We have decided to create a standalone EOS voting application that signs your transactions locally with your private key and then executes the transaction on the blockchain. The reason for this is multi-fold:</p>
+
+				<ul>
+					<li> The only EOS voting tool that is endorsed is a command line application which is difficult to install and use and will greatly limit access to voting.</li>
+					<li>Scatter, the most popular Web3 EOS wallet, has never been tested in production and isn’t fully verified by the community.</li>
+					<li>The web voting tool we built only works on HTTP, and even though your private key never leaves your browser, we wanted an extra level of security.</li>
+				</ul>
+				<hr class="mt-4">
+			</div>
+
 		</div>
 				<div class="row">
 			<!-- Boxes de Acoes -->
@@ -83,7 +88,7 @@
 				<p class="card-text">
 					<div class="form-group">
 						<label for="eos_private_key">Private key</label>
-						<input type="text" id="eos_private_key" placeholder="Required">
+						<input type="password" id="eos_private_key" placeholder="Required">
 						<small id="emailHelp" class="form-text text-muted">Your EOS Private key.</small>
 						<label for="cleos_name">Account Name</label>
 						<label type="text" id="cleos_name" placeholder="Required">
@@ -99,9 +104,7 @@
 		</div>
 
 		<div class="mb-2">
-			<button id="vote_button" class="btn btn-primary float-left pl-5 pr-5">
-				Vote
-			</button>
+			
 			<div class="form-group col-sm-3 float-right pr-0">
 				<input type="text" id="search" class="form-control" onkeyup="voter.search()" placeholder="Search..."/>
 			</div>
@@ -122,8 +125,13 @@
 			</tbody>
 		</table>
 	</div>
-	<footer class="text-center m-5">
-		<div class="text-white">Brought to you by <a href="https://liquideos.com" target="_blank">LiquidEOS.com</a></div>
+	<footer class="text-center m-5 footer">
+		<div class="container">
+			<button id="vote_button" class="btn btn-primary float-left pl-5 pr-5">
+					Vote
+				</button>
+			<div class="text-white">Brought to you by <a href="https://liquideos.com" target="_blank">LiquidEOS.com</a></div>
+		</div>
 	</footer>
 	<!--
 	<script src="eosjs.js"></script>
