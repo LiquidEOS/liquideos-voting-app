@@ -131,6 +131,7 @@ var eosVoter = class {
         if (document.getElementById("eos_private_key"))
             privateKey = document.getElementById("eos_private_key").value;
         try {
+
             voter.eosPublic.getKeyAccounts({ "public_key": Eos.modules.ecc.privateToPublic(privateKey) }).then(identity => {
                 accountName = identity.account_names[0];
                 if (document.getElementById("vote_button"))
@@ -139,9 +140,17 @@ var eosVoter = class {
                     document.getElementById("cleos_name").innerHTML = accountName;
                 if (document.getElementById("cleos_account2"))
                     document.getElementById("cleos_account2").innerHTML = accountName;
+                document.getElementById("private_key_message").innerHTML = "Valid Private Key";                
+                document.getElementById("private_key_message").classList.add("text-success");
+                document.getElementById("private_key_message").classList.remove("text-danger");
             });
+
         }
         catch (e) {
+            document.getElementById("private_key_message").innerHTML = "Invalid Private Key";
+            
+                document.getElementById("private_key_message").classList.remove("text-success");
+                document.getElementById("private_key_message").classList.add("text-danger");
             // todo if we have time add error to private key input
             //show error to user
         }

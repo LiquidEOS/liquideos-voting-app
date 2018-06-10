@@ -23,81 +23,7 @@
             alt="Fork me on GitHub">
     </a>
     <div class="container bg-white">
-        <!-- <div class="row">
-			<div class="col-xs-12  pb-1 pt-4 pl-4 pr-4">
-				<p>We have decided to create a standalone EOS voting application that signs your transactions locally with your private
-					key and then executes the transaction on the blockchain. The reason for this is multi-fold:</p>
-
-				<ul>
-					<li> The only EOS voting tool that is endorsed is a command line application which is difficult to install and use and will
-						greatly limit access to voting.</li>
-					<li>Scatter, the most popular Web3 EOS wallet, has never been tested in production and isn’t fully verified by the community.</li>
-					<li>The web voting tool we built only works on HTTP, and even though your private key never leaves your browser, we wanted
-						an extra level of security.</li>
-				</ul>
-				<hr class="mt-4">
-			</div>
-
-		</div> -->
-        <!-- <div class="row">
-
-			<div class="col-xs-12 col-sm-6 col-lg-4 pl-4">
-				<div class="box">
-					<div class="icon">
-						<div class="image">
-							<i class="fa fa-key"></i>
-						</div>
-						<div class="info">
-							<h3 class="title">Enter Your Private Key</h3>
-							<p>
-								Your private key never leaves this application and is only used to sign transactions. After entering your private key, please
-								verify the displayed account name.
-							</p>
-						</div>
-					</div>
-					<div class="space"></div>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-sm-6 col-lg-4">
-				<div class="box">
-					<div class="icon">
-						<div class="image">
-							<i class="fa fa-check-circle"></i>
-						</div>
-						<div class="info">
-							<h3 class="title">Vote for Block Producers (BPs)</h3>
-							<p>
-								You can vote for up to 30 BPs, the 21 BPs with the most votes will start producing blocks. Your vote is weighted based on
-								the amount of EOS in your wallet.
-							</p>
-						</div>
-					</div>
-					<div class="space"></div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-lg-4 pr-4">
-				<div class="box">
-					<div class="icon">
-						<div class="image">
-							<i class="fa fa-thumbs-o-up"></i>
-						</div>
-						<div class="info">
-							<h3 class="title">Click Vote</h3>
-							<p>
-								Voting signs your votes with your private key and encrypts your transaction. The signed transaction is then sent to the EOS
-								blockchain using tools provided by EOSIO, namely,
-								<a href="https://github.com/EOSIO/eosjs" target="_blank">eosjs</a>.
-							</p>
-
-						</div>
-
-					</div>
-					<div class="space"></div>
-				</div>
-			</div>
-
-		</div> -->
+        <h1 class="mt-3">Enter Your Private Key</h1>
         <div class="card mt-3 mb-3">
             <div class="card-body">
                 <p>Please enter your EOS private key. Your key is only used to sign a transaction locally and never leaves this
@@ -107,9 +33,9 @@
                 </p>
                 <p class="card-text">
                     <div class="form-group">
-                        <label for="eos_private_key">Private key</label> -->
-                        <input type="password" id="eos_private_key" placeholder="Required">
-                        <small id="emailHelp" class="form-text text-muted">Your EOS Private key.</small>
+                        <label for="eos_private_key">Private key</label> 
+                        <input type="password" id="eos_private_key" placeholder="Required" class="form-control">
+                        <small id="private_key_message" class="form-text"></small>
                         <label for="cleos_name">Account Name</label>
                         <label type="text" id="cleos_name" placeholder="Required">
                             <small id="emailHelp" class="form-text text-muted">Your EOS Account Name.</small>
