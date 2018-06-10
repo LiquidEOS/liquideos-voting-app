@@ -132,6 +132,8 @@ var eosVoter = class {
         try {
             voter.eosPublic.getKeyAccounts({ "public_key": Eos.modules.ecc.privateToPublic(privateKey) }).then(identity => {
                 accountName = identity.account_names[0];
+                if (document.getElementById("vote_button"))
+                    document.getElementById("vote_button").disabled = false;
                 if (document.getElementById("cleos_name"))
                     document.getElementById("cleos_name").innerHTML = accountName;
                 if (document.getElementById("cleos_account2"))
