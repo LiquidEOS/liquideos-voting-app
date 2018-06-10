@@ -250,7 +250,7 @@ var eosVoter = class {
     }
 
     bpShouldBeSelected(owner) {
-        return owner === this.promoted || window.localStorage.getItem('selectedBPs').indexOf(owner) >= 0;
+        return owner === this.promoted || window.localStorage.getItem('selectedBPs') && window.localStorage.getItem('selectedBPs').indexOf(owner) >= 0;
     }
     countTotalVotes(res) {
         this.votes = 0;
