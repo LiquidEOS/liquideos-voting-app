@@ -15,6 +15,8 @@ cd electron-quick-start
 npm install
 # Run the app
 npm start
+# Create distribution
+npm run dist
 ```
 
 
@@ -29,6 +31,8 @@ cd electron-quick-start
 npm install
 # Run the app
 npm start
+# Create distribution
+npm run dist
 ```
 
 ## License
