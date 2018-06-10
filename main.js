@@ -19,7 +19,7 @@ let mainWindow,
 
 function createLoadingScreen() {
     loadingScreen = new BrowserWindow(Object.assign(windowParams, {parent: mainWindow}));
-    loadingScreen.loadURL('file://' + __dirname + '/loading.html');
+    loadingScreen.loadURL('file://' + __dirname + '/index.html');
     loadingScreen.on('closed', () => loadingScreen = null);
     loadingScreen.webContents.on('did-finish-load', () => {
         loadingScreen.show();
