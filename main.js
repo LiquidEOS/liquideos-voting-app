@@ -26,7 +26,6 @@ function createLoadingScreen() {
     });
 }
 
-
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow(windowParams);

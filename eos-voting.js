@@ -18,6 +18,12 @@ const networks = [
         port: 8888
     }
 ];
+
+
+function listNextClick() {
+    window.location.href = "vote.html";
+}
+
 var defaultIndex = 1;
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -140,6 +146,10 @@ var eosVoter = class {
 
     bpClick() {
         var bps = voter.getSelectedBPs();
+        if (bps.length > 0 && bps.length < 30)
+            document.getElementById("list-next").disabled = false;
+        else
+            document.getElementById("list-next").disabled = true;
         voter.storeSelectedBPs(bps);
     }
 
