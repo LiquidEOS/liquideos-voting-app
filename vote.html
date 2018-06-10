@@ -33,6 +33,7 @@
                 </p>
                 <p class="card-text">
                     <div class="form-group">
+                    	Selected BPs: <strong id="selectedBPs"></strong><br>
                         <label for="eos_private_key">Private key</label> 
                         <input type="password" id="eos_private_key" placeholder="Required" class="form-control">
                         <small id="private_key_message" class="form-text"></small>
@@ -83,7 +84,9 @@
 
         <script src="eosjs.js"></script>
         <script type="text/javascript" src="eos-voting.js"></script>
-        
+        <script type="text/javascript">
+        	document.getElementById("selectedBPs").innerHTML = window.localStorage.getItem('selectedBPs');
+        </script>
 
 </body>
 

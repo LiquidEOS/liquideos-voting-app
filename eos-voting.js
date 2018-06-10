@@ -78,7 +78,7 @@ var eosVoter = class {
             config.httpEndpoint = 'http://' + network.host + ':' + network.port;
         }
 
-        this.eosPrivate = new Eos.Testnet(config);
+        this.eosPrivate = new Eos(config);
         if (document.getElementById("vote_button")) {
             document.getElementById("vote_button").disabled = true;
             this.working = true;
@@ -215,7 +215,7 @@ var eosVoter = class {
             config.httpEndpoint = 'http://' + network.host + ':' + network.port;
         }
 
-        this.eosPublic = new Eos.Testnet(config);
+        this.eosPublic = new Eos(config);
         console.log('this.eosPublic ', this.eosPublic)
         this.populateBPs().then(res => {
             this.buildTable(res);
@@ -236,7 +236,7 @@ var eosVoter = class {
 
             table.append(tr);
             tr.append(this.addTd('<input name="bpVote" type="checkbox" value="' + row.owner + '" ' + (this.bpShouldBeSelected(row.owner) ? 'checked' : '') + ' >'));
-            tr.append(this.addTd("<a href='" + row.url + "'>" + row.owner + "</a>"));
+            tr.append(this.addTd("<a href='" + row.url + "' target='_blank'>" + row.owner + "</a>"));
             tr.append(this.addTd(row.location));
             tr.append(this.addTd(this.cleanNumber(row.total_votes)));
             tr.append(this.addTd(this.createProgressBar(this.cleanPercent(this.voteNumber(row.total_votes) / this.votes))));
