@@ -87,3 +87,7 @@ header {
 .test {
   margin: 0 auto;
 }
+
+.mr-16 {
+  margin-right: 16px;
+}

@@ -75,10 +75,12 @@ var eosVoter = class {
         if (document.getElementById("vote_button")) {
             document.getElementById("vote_button").disabled = true;
             this.working = true;
-            console.log('this.getSelectedBPs() ', this.getSelectedBPs())
+            const selectedVPs = window.localStorage.getItem('selectedBPs').split(',');
+
+            console.log('selectedVPs ', selectedVPs)
             return this.eosPrivate.contract('eosio').then(contract => {
                 // return this.eosPrivate.voteproducer(accountName, "", this.getSelectedBPs());
-                return contract.voteproducer({ voter: accountName, proxy: "", producers: this.getSelectedBPs() }, { authorization: accountName });
+                return contract.voteproducer({ voter: accountName, proxy: "", producers: selectedVPs }, { authorization: accountName });
             }).then(res => {
                 document.getElementById("vote_button").disabled = false;
                 this.voteSuccess(res);
@@ -109,7 +111,7 @@ var eosVoter = class {
         else {
             if (document.getElementById("messages"))
                 document.getElementById("messages").innerHTML = '';
-            if (!this.working)
+            if (!this.working && document.getElementById("vote_button"))
                 document.getElementById("vote_button").disabled = false;
         }
         return selected;
@@ -131,12 +133,19 @@ var eosVoter = class {
             });
         }
         catch (e) {
+            // todo if we have time add error to private key input
             //show error to user
         }
     }
 
     bpClick() {
         var bps = voter.getSelectedBPs();
+        voter.storeSelectedBPs(bps);
+    }
+
+    storeSelectedBPs(bps) {
+        localStorage.setItem('selectedBPs', bps);
+        // cookie["selected"] = this.getSelectedBPs()
     }
 
     voteSuccess(res) {
@@ -211,8 +220,9 @@ var eosVoter = class {
             tr.append(this.addTd(this.cleanNumber(row.total_votes)));
             tr.append(this.addTd(this.createProgressBar(this.cleanPercent(this.voteNumber(row.total_votes) / this.votes))));
         }
+
         document.getElementsByName("bpVote").forEach(e => {
-            e.onclick = this.bpClick;
+            e.onclick = voter.bpClick;
         });
         return table;
     }
