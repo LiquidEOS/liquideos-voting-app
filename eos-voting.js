@@ -24,7 +24,7 @@ function listNextClick() {
     window.location.href = "vote.html";
 }
 
-var defaultIndex = 1;
+var defaultIndex = 0;
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
