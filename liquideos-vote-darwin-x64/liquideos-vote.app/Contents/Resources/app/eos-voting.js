@@ -1,6 +1,3 @@
-/* eslint-disable */
-
-
 let accountName = "";
 let privateKey = "";
 const networks = [
@@ -42,10 +39,8 @@ var eosVoter = class {
             chainId: null,
         }
         this.eosPublic = null;
-        if (document.getElementById("cleos_name"))
-            document.getElementById("cleos_name").onkeyup = this.updateAccountName;
-        if (document.getElementById("eos_private_key"))
-            document.getElementById("eos_private_key").onkeyup = this.updatePrivateKey;
+        document.getElementById("cleos_name").onkeyup = this.updateAccountName;
+        document.getElementById("eos_private_key").onkeyup = this.updatePrivateKey;
     }
 
     addTd(text) {
@@ -62,7 +57,7 @@ var eosVoter = class {
             chainId: network.chainId, // 32 byte (64 char) hex string          
             expireInSeconds: 120,
             // sign: true,
-            keyProvider: document.getElementById("eos_private_key") ? document.getElementById("eos_private_key").value : ''
+            keyProvider: document.getElementById("eos_private_key").value
         };
         if (network.secured) {
             config.httpsEndpoint = 'https://' + network.host + ':' + network.port;
@@ -72,24 +67,22 @@ var eosVoter = class {
         }
 
         this.eosPrivate = new Eos.Testnet(config);
-        if (document.getElementById("vote_button")) {
-            document.getElementById("vote_button").disabled = true;
-            this.working = true;
-            console.log('this.getSelectedBPs() ', this.getSelectedBPs())
-            return this.eosPrivate.contract('eosio').then(contract => {
-                // return this.eosPrivate.voteproducer(accountName, "", this.getSelectedBPs());
-                return contract.voteproducer({ voter: accountName, proxy: "", producers: this.getSelectedBPs() }, { authorization: accountName });
-            }).then(res => {
-                document.getElementById("vote_button").disabled = false;
-                this.voteSuccess(res);
-                this.working = false;
-            }).catch(error => {
-                document.getElementById("vote_button").disabled = false;
-                this.voteError(error);
-                this.working = true;
-            });
 
-        }
+        document.getElementById("vote_button").disabled = true;
+        this.working = true;
+        console.log('this.getSelectedBPs() ', this.getSelectedBPs())
+        return this.eosPrivate.contract('eosio').then(contract => {
+            // return this.eosPrivate.voteproducer(accountName, "", this.getSelectedBPs());
+            return contract.voteproducer({voter:accountName, proxy:"", producers:this.getSelectedBPs()}, {authorization : accountName});
+        }).then(res => {
+            document.getElementById("vote_button").disabled = false;
+            this.voteSuccess(res);
+            this.working = false;
+        }).catch(error => {
+            document.getElementById("vote_button").disabled = false;
+            this.voteError(error);
+            this.working = true;
+        });
     }
 
     getSelectedBPs() {
@@ -101,14 +94,11 @@ var eosVoter = class {
         selected.sort();
         if (selected.length > 30) {
             var msg = '<div class="alert alert-danger"> Too many block producers in vote (maximum 30)</div>';
-            if (document.getElementById("messages"))
-                document.getElementById("messages").innerHTML = msg;
-            if (document.getElementById("vote_button"))
-                document.getElementById("vote_button").disabled = true;
+            document.getElementById("messages").innerHTML = msg;
+            document.getElementById("vote_button").disabled = true;
         }
         else {
-            if (document.getElementById("messages"))
-                document.getElementById("messages").innerHTML = '';
+            document.getElementById("messages").innerHTML = '';
             if (!this.working)
                 document.getElementById("vote_button").disabled = false;
         }
@@ -119,20 +109,12 @@ var eosVoter = class {
     }
 
     updatePrivateKey() {
-        if (document.getElementById("eos_private_key"))
-            privateKey = document.getElementById("eos_private_key").value;
-        try {
-            voter.eosPublic.getKeyAccounts({ "public_key": Eos.modules.ecc.privateToPublic(privateKey) }).then(identity => {
-                accountName = identity.account_names[0];
-                if (document.getElementById("cleos_name"))
-                    document.getElementById("cleos_name").innerHTML = accountName;
-                if (document.getElementById("cleos_account2"))
-                    document.getElementById("cleos_account2").innerHTML = accountName;
-            });
-        }
-        catch (e) {
-            //show error to user
-        }
+        privateKey = document.getElementById("eos_private_key").value;
+        voter.eosPublic.getKeyAccounts({ "public_key": Eos.modules.ecc.privateToPublic(privateKey) }).then(identity => {
+            accountName = identity.account_names[0];
+            document.getElementById("cleos_name").innerHTML = accountName;
+            document.getElementById("cleos_account2").innerHTML = accountName;
+        });
     }
 
     bpClick() {
@@ -142,18 +124,15 @@ var eosVoter = class {
     voteSuccess(res) {
         //otodo
         console.log(res);
-        window.location.href = 'thanx.html';
         var msg = '<div class="alert alert-success">' + "Vote Successfully Submitted" + '</div>';
-        if (document.getElementById("messages"))
-            document.getElementById("messages").innerHTML = msg;
+        document.getElementById("messages").innerHTML = msg;
     }
 
     voteError(res) {
         //otodo
         console.log(res);
         var msg = '<div class="alert alert-danger">' + res.message + '</div>';
-        if (document.getElementById("messages"))
-            document.getElementById("messages").innerHTML = msg;
+        document.getElementById("messages").innerHTML = msg;
     }
 
     populateBPs() {
@@ -202,8 +181,6 @@ var eosVoter = class {
         for (var i = 0; i < sorted.length; i++) {
             var row = sorted[i];
             var tr = document.createElement('tr');
-            if (!table) return;
-
             table.append(tr);
             tr.append(this.addTd('<input name="bpVote" type="checkbox" value="' + row.owner + '" ' + (row.owner === promoted ? 'checked' : '') + ' >'));
             tr.append(this.addTd("<a href='" + row.url + "'>" + row.owner + "</a>"));
@@ -299,8 +276,7 @@ var eosVoter = class {
             if (identity.accounts.length === 0) return
             var accountName = identity.accounts[0].name;
 
-            if (document.getElementById("cleos_name"))
-                document.getElementById("cleos_name").value = accountName;
+            document.getElementById("cleos_name").value = accountName;
             this.updateAccountName();
         });
 
@@ -311,11 +287,9 @@ var eosVoter = class {
 
 
 var voter = new eosVoter();
-if (document.getElementById("vote_button")) {
-    document.getElementById("vote_button").addEventListener('click', function () {
-        voter.vote()
-    });
-}
+document.getElementById("vote_button").addEventListener('click', function () {
+    voter.vote()
+});
 document.addEventListener('scatterLoaded', scatterExtension => {
     voter.load();
 });

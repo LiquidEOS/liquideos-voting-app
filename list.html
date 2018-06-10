@@ -10,9 +10,7 @@
 </head>
 
 <body>
-
 	<header>
-
 		<div class="container text-center p-4">
 			<a href="https://www.liquideos.com/" target="_blank">
 				<img src="liquideos-logo.png" width="250px" class="mb-3">
@@ -25,9 +23,8 @@
 		 alt="Fork me on GitHub">
 	</a>
 	<div class="container bg-white">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-xs-12  pb-1 pt-4 pl-4 pr-4">
-				<!-- Boxes de Acoes -->
 				<p>We have decided to create a standalone EOS voting application that signs your transactions locally with your private
 					key and then executes the transaction on the blockchain. The reason for this is multi-fold:</p>
 
@@ -41,9 +38,8 @@
 				<hr class="mt-4">
 			</div>
 
-		</div>
-		<div class="row">
-			<!-- Boxes de Acoes -->
+		</div> -->
+		<!-- <div class="row">
 
 			<div class="col-xs-12 col-sm-6 col-lg-4 pl-4">
 				<div class="box">
@@ -100,39 +96,40 @@
 					<div class="space"></div>
 				</div>
 			</div>
-		</div>
-				<div class="row justify-content-center">
-					<div class="col">
-						<a href="list.html"><button class="btn btn-primary">Next</button></a>
-					</div>
-				</div>
-		<!-- <div class="card mt-3 mb-3">
-			<div class="card-body">
-				
-				<p class="card-text">
-					<div class="form-group">
-						<label for="eos_private_key">Private key</label>
-						<input type="password" id="eos_private_key" placeholder="Required">
-						<small id="emailHelp" class="form-text text-muted">Your EOS Private key.</small>
-						<label for="cleos_name">Account Name</label>
-						<label type="text" id="cleos_name" placeholder="Required">
-						<small id="emailHelp" class="form-text text-muted">Your EOS Account Name.</small>
-					</div>
-				</p>
 
-			</div>
+		</div> -->
+		<!-- <div class="card mt-3 mb-3">
+			<div class="card-body"> -->
+
+				<!-- <p class="card-text">
+					<div class="form-group"> -->
+						<!-- <label for="eos_private_key">Private key</label> -->
+						<!-- <input type="password" id="eos_private_key" placeholder="Required"> -->
+						<!-- <small id="emailHelp" class="form-text text-muted">Your EOS Private key.</small> -->
+						<!-- <label for="cleos_name">Account Name</label> -->
+						<!-- <label type="text" id="cleos_name" placeholder="Required"> -->
+							<!-- <small id="emailHelp" class="form-text text-muted">Your EOS Account Name.</small> -->
+					<!-- </div> -->
+				<!-- </p> -->
+
+			<!-- </div>
 		</div> -->
 
-		<!-- <div class="mt-2" id="messages">
+		<div class="mt-2" id="messages">
 
 		</div>
 
-		<div class="mb-2">
-			
-			<div class="form-group col-sm-3 float-right pr-0">
-				<input type="text" id="search" class="form-control" onkeyup="voter.search()" placeholder="Search..."/>
-			</div>
-		</div>		
+		<div class="form-group d-flex ">
+				<a href="vote.html"><button class="btn btn-primary">Next</button></a>
+			<input type="text" id="search" class="form-control" onkeyup="voter.search()" placeholder="Search..." />
+		</div>
+		<!-- <div class="mb-2"> -->
+				<!-- <div class="row justify-content-center">
+						<div class="col test">
+							<a href="list.html"><button class="btn btn-primary">Next</button></a>
+						</div>
+					</div> -->
+		<!-- </div> -->
 		<table class="table table-striped" id="bps">
 			<thead>
 				<tr>
@@ -147,22 +144,18 @@
 
 
 			</tbody>
-		</table> -->
-		<!-- </div> -->
-		<!-- <footer class="text-center m-5 footer">
+		</table>
+	</div>
+	<footer class="text-center footer">
 		<div class="container">
-			<button id="vote_button" class="btn btn-primary float-left pl-5 pr-5">
-					Vote
-				</button>
-			<div class="text-white">Brought to you by <a href="https://liquideos.com" target="_blank">LiquidEOS.com</a></div>
+			<div class="text-white">Brought to you by
+				<a href="https://liquideos.com" target="_blank">LiquidEOS.com</a>
+			</div>
 		</div>
-	</footer> -->
-		<!--
+	</footer>
+
 	<script src="eosjs.js"></script>
-	<script type="text/javascript" src="app.js"></script>
--->
-		<script src="eosjs.js"></script>
-		<script type="text/javascript" src="eos-voting.js"></script>
+	<script type="text/javascript" src="eos-voting.js"></script>
 
 </body>
 
