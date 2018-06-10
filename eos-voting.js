@@ -110,11 +110,16 @@ var eosVoter = class {
 
     updatePrivateKey() {
         privateKey = document.getElementById("eos_private_key").value;
-        voter.eosPublic.getKeyAccounts({ "public_key": Eos.modules.ecc.privateToPublic(privateKey) }).then(identity => {
-            accountName = identity.account_names[0];
-            document.getElementById("cleos_name").innerHTML = accountName;
-            document.getElementById("cleos_account2").innerHTML = accountName;
-        });
+        try {
+            voter.eosPublic.getKeyAccounts({ "public_key": Eos.modules.ecc.privateToPublic(privateKey) }).then(identity => {
+                accountName = identity.account_names[0];
+                document.getElementById("cleos_name").innerHTML = accountName;
+                document.getElementById("cleos_account2").innerHTML = accountName;
+            });
+        }
+        catch(e) {
+            //show error to user
+        }
     }
 
     bpClick() {
