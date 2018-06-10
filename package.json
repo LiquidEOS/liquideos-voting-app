@@ -1,0 +1,33 @@
+{
+  "name": "liquideos-vote",
+  "version": "1.0.0",
+  "description": "liquideos-vote",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+      "pack": "electron-builder --dir",
+      "dist": "electron-builder"
+  },
+  "keywords": [
+  ],
+  "build": {    
+    "appId": "com.liquideos.vote",    
+
+    "win":{
+      "target": "portable"
+    },
+    "files": [
+     "**/*",
+      "!node_modules/**"
+    ]
+  },
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron-builder": "^20.15.1",
+    "electron-packager": "^12.1.0",
+    "electron": "^2.0.0"
+  },
+  "dependencies": {
+  }
+}
