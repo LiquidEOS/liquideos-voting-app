@@ -12,16 +12,69 @@
 	<header >
 		
 		<div class="container text-center p-4">
-			 <a href="https://www.liquideos.com/"><img src="liquideos-logo.png" width="250px" class="mb-3"></a>
+			 <a href="https://www.liquideos.com/" target="_blank"><img src="liquideos-logo.png" width="250px" class="mb-3"></a>
 			<h1 class="text-white">EOS Block Producer Voting Tool</h1>
 		</div>
 	</header>
+	<a href="https://github.com/bancorprotocol/liquideos-voting-app" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
 	<div class="container bg-white">
 		<div class="row">
 			<!-- Boxes de Acoes -->
+			<p>We have decided to create a standalone EOS voting application that signs your transactions locally with your private key and then executes the transaction on the blockchain. The reason for this is multi-fold:</p>
+			<ul>
+				<li> The only EOS voting tool that is endorsed is a command line application which is difficult to install and use and will greatly limit access to voting.</li>
+				<li>Scatter, the most popular Web3 EOS wallet, has never been tested in production and isn’t fully verified by the community.</li>
+				<li>The web voting tool we built only works on HTTP, and even though your private key never leaves your browser, we wanted an extra level of security.</li>
+			</ul>
+		</div>
+				<div class="row">
+			<!-- Boxes de Acoes -->
 
-		
-			
+			<div class="col-xs-12 col-sm-6 col-lg-4 pl-4">
+				<div class="box">							
+					<div class="icon">
+						<div class="image"><i class="fa fa-key"></i></div>
+						<div class="info">
+							<h3 class="title">Enter Your Private Key</h3>
+							<p>
+								Your private key never leaves this application and is only used to sign transactions. After entering your private key, please verify the displayed account name.
+							</p>
+						</div>
+					</div>
+					<div class="space"></div>
+				</div> 
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-lg-4">
+				<div class="box">							
+					<div class="icon">
+						<div class="image"><i class="fa fa-check-circle"></i></div>
+						<div class="info">
+							<h3 class="title">Vote for Block Producers (BPs)</h3>
+							<p>
+								You can vote for up to 30 BPs, the 21 BPs with the most votes will start producing blocks. Each vote is weighted based on the amount of EOS in your wallet, so voting for 1 candidate and 30, does not change the amount your counts.
+							</p>
+						</div>
+					</div>
+					<div class="space"></div>
+				</div> 
+			</div>	
+			<div class="col-xs-12 col-sm-6 col-lg-4 pr-4">
+				<div class="box">							
+					<div class="icon">
+						<div class="image"><i class="fa fa-thumbs-o-up"></i></div>
+						<div class="info">
+							<h3 class="title">Click Vote</h3>
+							<p>
+								Voting takes your private key and your votes and signs/encrypts your transaction. The signed transaction is then sent to the EOS blockchain using tools provided by EOSIO, namely, <a href="https://github.com/EOSIO/eosjs" target="_blank">eosjs</a>.
+							</p>
+							
+						</div>
+
+					</div>
+					<div class="space"></div>
+				</div> 
+			</div>
 	    
 		</div>
 		<div class="card mt-3 mb-3">
@@ -70,7 +123,7 @@
 		</table>
 	</div>
 	<footer class="text-center m-5">
-		<div class="text-white">Brought to you by <a href="https://liquideos.com">LiquidEOS.com</a></div>
+		<div class="text-white">Brought to you by <a href="https://liquideos.com" target="_blank">LiquidEOS.com</a></div>
 	</footer>
 	<!--
 	<script src="eosjs.js"></script>

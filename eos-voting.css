@@ -1,6 +1,6 @@
 
-@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
-@import "//fonts.googleapis.com/css?family=Roboto:400,500";
+@import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500";
 
 body {
 	font-family: 'lato';
