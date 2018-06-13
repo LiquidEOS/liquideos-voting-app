@@ -25,7 +25,7 @@ span.current-value {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-	background:#edf8ff;
+	background:#F7EDFF;
 }
 html {
   position: relative;
@@ -62,7 +62,7 @@ header {
 .box > .icon > .info > p { font-family: "Roboto",sans-serif !important; font-size: 13px; color: #666; line-height: 1.5em; margin: 10px 20px 20px 20px;}
 .box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a { color: #222; }
 .box > .icon > .info > .more a { font-family: "Roboto",sans-serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
-.box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #6bb9d5; }
+.box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #7D6BD5; }
 .box .space { height: 30px; }
 
 #eos_private_key {
