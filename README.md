@@ -10,8 +10,8 @@ Forked from LiquidEOS
 
 ## To Download
 
-* **[sheos-vote-windows-1.0.0.zip](https://)**
-* **[sheos-vote-macos-1.0.0.zip](https://)**
+* **[sheos-vote-windows-1.0.0.zip](https://www.dropbox.com/s/lpntpv2su1snah4/sheos-vote_v1.0.0_OSX.zip?dl=1)**
+* **[sheos-vote-macos-1.0.0.zip](https://www.dropbox.com/s/t7tre5prv8ux4zg/sheos-vote_v1.0.0_WIN.zip?dl=1)**
 
 ## To Use
 
