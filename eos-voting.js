@@ -66,7 +66,7 @@ var eosVoter = class {
         var table;
         // console.log('document.getElementById("eos_private_key").value !!! ', document.getElementById("eos_private_key").value)
         var config = {
-            chainId: network.chainId, // 32 byte (64 char) hex string          
+            chainId: network.chainId, // 32 byte (64 char) hex string
             expireInSeconds: 120,
             // sign: true,
             keyProvider: document.getElementById("eos_private_key") ? document.getElementById("eos_private_key").value : ''
@@ -140,7 +140,7 @@ var eosVoter = class {
                     document.getElementById("cleos_name").innerHTML = accountName;
                 if (document.getElementById("cleos_account2"))
                     document.getElementById("cleos_account2").innerHTML = accountName;
-                document.getElementById("private_key_message").innerHTML = "Valid Private Key";                
+                document.getElementById("private_key_message").innerHTML = "Valid Private Key";
                 document.getElementById("private_key_message").classList.add("text-success");
                 document.getElementById("private_key_message").classList.remove("text-danger");
             });
@@ -148,7 +148,7 @@ var eosVoter = class {
         }
         catch (e) {
             document.getElementById("private_key_message").innerHTML = "Invalid Private Key";
-            
+
                 document.getElementById("private_key_message").classList.remove("text-success");
                 document.getElementById("private_key_message").classList.add("text-danger");
             // todo if we have time add error to private key input
@@ -202,7 +202,7 @@ var eosVoter = class {
         var table;
         console.log('refreshBPs !!!')
         var config = {
-            chainId: null, // 32 byte (64 char) hex string          
+            chainId: null, // 32 byte (64 char) hex string
             expireInSeconds: 60,
             broadcast: true,
             debug: true, // API and transactions
@@ -225,7 +225,7 @@ var eosVoter = class {
 
     buildTable(res) {
         var table = document.getElementsByTagName('tbody')[0];
-        
+
         this.countTotalVotes(res);
         var sorted = res.rows.sort((a, b) => a.owner === this.promoted ? -1 : b.owner === this.promoted ? 1 : Number(a.total_votes) > Number(b.total_votes) ? -1 : 1);
 
@@ -236,7 +236,7 @@ var eosVoter = class {
 
             table.append(tr);
             tr.append(this.addTd('<input name="bpVote" type="checkbox" value="' + row.owner + '" ' + (this.bpShouldBeSelected(row.owner) ? 'checked' : '') + ' >'));
-            tr.append(this.addTd("<a href='" + row.url + "' target='_blank'>" + row.owner + "</a>"));
+            tr.append(this.addTd("<a href='" + row.url + "' class='btn-purple-link' target='_blank'>" + row.owner + "</a>"));
             // tr.append(this.addTd(row.location));
             tr.append(this.addTd(this.cleanNumber(row.total_votes)));
             tr.append(this.addTd(this.createProgressBar(this.cleanPercent(this.voteNumber(row.total_votes) / this.votes))));
