@@ -3,7 +3,7 @@ let privateKey = "";
 const networks = [
     {
         name: "Main Net",
-        host: "user-api.eoseoul.io",
+        host: "node2.liquideos.com",
         port: 8888,
         chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
         secured: false
