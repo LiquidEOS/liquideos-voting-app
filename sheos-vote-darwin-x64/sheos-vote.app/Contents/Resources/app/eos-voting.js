@@ -3,7 +3,7 @@ let privateKey = "";
 const networks = [
     {
         name: "Main Net",
-        host: "node2.liquideos.com",
+        host: "user-api.eoseoul.io",
         port: 8888,
         chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
         secured: false
@@ -54,7 +54,7 @@ var eosVoter = class {
         var table;
         // console.log('document.getElementById("eos_private_key").value !!! ', document.getElementById("eos_private_key").value)
         var config = {
-            chainId: network.chainId, // 32 byte (64 char) hex string          
+            chainId: network.chainId, // 32 byte (64 char) hex string
             expireInSeconds: 120,
             // sign: true,
             keyProvider: document.getElementById("eos_private_key").value
@@ -151,7 +151,7 @@ var eosVoter = class {
         var table;
         console.log('refreshBPs !!!')
         var config = {
-            chainId: null, // 32 byte (64 char) hex string          
+            chainId: null, // 32 byte (64 char) hex string
             expireInSeconds: 60,
             broadcast: true,
             debug: true, // API and transactions
