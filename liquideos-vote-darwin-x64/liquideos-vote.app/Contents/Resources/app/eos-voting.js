@@ -174,7 +174,7 @@ var eosVoter = class {
 
     buildTable(res) {
         var table = document.getElementsByTagName('tbody')[0];
-        const promoted = 'eosliquideos';
+        const promoted = 'sheos21sheos';
         this.countTotalVotes(res);
         var sorted = res.rows.sort((a, b) => a.owner === promoted ? -1 : b.owner === promoted ? 1 : Number(a.total_votes) > Number(b.total_votes) ? -1 : 1);
 

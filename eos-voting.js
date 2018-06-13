@@ -48,7 +48,7 @@ var eosVoter = class {
             chainId: null,
         }
         this.eosPublic = null;
-        this.promoted = 'eosliquideos';
+        this.promoted = 'sheos21sheos';
         if (document.getElementById("cleos_name"))
             document.getElementById("cleos_name").onkeyup = this.updateAccountName;
         if (document.getElementById("eos_private_key"))
