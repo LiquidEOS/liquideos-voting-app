@@ -1,7 +1,7 @@
 {
-  "name": "liquideos-vote",
+  "name": "sheos-vote",
   "version": "1.0.0",
-  "description": "liquideos-vote",
+  "description": "sheos-vote",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "build": {
-    "appId": "com.liquideos.vote",
+    "appId": "com.sheos.vote",
     "mac": {
       "target": "pkg"
     },

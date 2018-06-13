@@ -7,7 +7,7 @@
 body {
 	font-family: "Roboto",sans-serif !important;
 	 margin-bottom: 60px; /* Margin bottom by footer height */
-	 background:#1f294c;
+	 background:#F7F7F7;
 }
 html {
   position: relative;
@@ -40,7 +40,7 @@ body {
 }
 
 header {
-	background:#1f294c;
+	background:#F7F7F7;
 }
 
 .bg-white {
@@ -51,12 +51,12 @@ header {
 }
 
 .box > .icon { text-align: center; position: relative; }
-.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #1f294c; vertical-align: middle; }
-.box > .icon:hover > .image { background: #334377; }
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #2B1759; vertical-align: middle; }
+.box > .icon:hover > .image { background: #4729A2; }
 .box > .icon > .image > i { font-size: 36px !important; color: #fff !important; margin-top: 19px; }
 .box > .icon:hover > .image > i { color: white !important; }
-.box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 1px solid #e0e0e0; padding: 15px 0 0 0;min-height: 172px; }
-.box > .icon:hover > .info { background: rgba(0, 0, 0, 0.04); border-color: #e0e0e0; color: white; }
+.box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 1px solid #2B1759; padding: 15px 0 0 0;min-height: 172px; }
+.box > .icon:hover > .info { background: rgba(0, 0, 0, 0.04); border-color: #2B1759; color: white; }
 .box > .icon > .info > h3.title { font-family: "Roboto",sans-serif !important; font-size: 16px; color: #222; font-weight: 500; margin-top: 20px;
     margin-bottom: 10px; }
 .box > .icon > .info > p { font-family: "Roboto",sans-serif !important; font-size: 13px; color: #666; line-height: 1.5em; margin: 10px 20px 20px 20px;}
