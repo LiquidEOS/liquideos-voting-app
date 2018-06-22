@@ -6,7 +6,9 @@ We created a standalone EOS voting application that signs your transactions loca
 2. Scatter, the most popular EOS wallet, did not receive an official endorsement from the community as a safe voting tool and many voters have reported having issues importing their accounts.
 3. The alternative web voting interface relies on Scatter, and even though your private key never leaves your browser, we wanted to provide you an extra level of security through an application that runs outside the browser and the potential reach of toolbars, botnets and other bad actors.
 
-Forked from LiquidEOS
+** Forked from LiquidEOS **
+
+## Instructions on how to use voting tool: https://www.youtube.com/watch?v=SnLIshq2Ckk&
 
 ## To Download
 
