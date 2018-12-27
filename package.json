@@ -1,7 +1,7 @@
 {
-  "name": "sheos-vote",
-  "version": "1.0.0",
-  "description": "sheos-vote",
+  "name": "sheos-voter",
+  "version": "1.0.1",
+  "description": "sheos-voter",
   "main": "main.js",
   "scripts": {
     "start": "electron .",

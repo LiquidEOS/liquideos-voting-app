@@ -16,12 +16,14 @@ const networks = [
         host: "jungle2.cryptolions.io",
         chainId: "e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473",
         port: 80
+	secured: false
     },
     {
       	name: "Crypto Kylin Testnet",
       	host: "kylin.eoscanada.com",
       	chainId: "5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191",
-      	port:80
+      	port: 80,
+	      secured: false
     }
 ];
 
