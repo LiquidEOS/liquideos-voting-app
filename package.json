@@ -1,6 +1,6 @@
 {
   "name": "sheos-vote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sheos-vote",
   "main": "main.js",
   "scripts": {
